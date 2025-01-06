@@ -8,13 +8,25 @@ and finally implimenting TF-IDF algorithm
 
 """
 import nltk
+from colorama import Fore, Style
 
 class WordToIndex:
 
     def readtext(self, document_name):
-        with open(document_name, 'r') as file:
-            text = file.read()
-            words = text.split() 
+        try:
+            with open(document_name, 'r') as file:
+                text = file.read()
+                words = text.split() 
+
+        except FileNotFoundError:
+            print(Fore.RED+"File not found\n")
+        
+        except Exception as e:
+            print(Fore.RED+f"Exception: {e}")
+
+        finally:
+            if file:
+                file.close()
 
         return words
 
