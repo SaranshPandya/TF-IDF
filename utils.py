@@ -11,7 +11,6 @@ import nltk
 from colorama import Fore, Style
 
 class WordToIndex:
-
     def readtext(self, document_name):
         try:
             with open(document_name, 'r') as file:
