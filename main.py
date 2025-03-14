@@ -6,3 +6,4 @@ indexer = WordToIndex()
 word_to_index = indexer.word_to_index('006.txt')
 
 print(word_to_index)
+
